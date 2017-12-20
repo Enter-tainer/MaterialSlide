@@ -4679,7 +4679,23 @@ section {
  */
 h1 {
   margin: .67em 0;
-  font-size: 2em;
+  font-size: 6em;
+}
+h2 {
+  margin: .67em 0;
+  font-size: 5em;
+}
+h3 {
+  margin: .67em 0;
+  font-size: 4.5em;
+}
+h4 {
+  margin: .67em 0;
+  font-size: 3.9em;
+}
+h5 {
+  margin: .67em 0;
+  font-size: 3em;
 }
 /* Grouping content
    ========================================================================== */
@@ -4697,7 +4713,7 @@ main {
  * Add the correct margin in IE 8.
  */
 figure {
-  margin: 1em 40px;
+  margin: 3em 40px;
 }
 /**
  * 1. Add the correct box sizing in Firefox.
@@ -4719,7 +4735,7 @@ hr {
 pre {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: 1em;
+  font-size: 3em;
   /* 2 */
 }
 /* Text-level semantics
@@ -4773,7 +4789,7 @@ kbd,
 samp {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: 1em;
+  font-size: 3em;
   /* 2 */
 }
 /**
@@ -5509,22 +5525,22 @@ body.mdui-locked {
   color: rgba(0, 0, 0, .54);
 }
 .mdui-typo h1 {
-  font-size: 2em;
+  font-size: 6em;
 }
 .mdui-typo h2 {
-  font-size: 1.8em;
+  font-size: 5.4em;
 }
 .mdui-typo h3 {
-  font-size: 1.6em;
+  font-size: 4.8em;
 }
 .mdui-typo h4 {
-  font-size: 1.4em;
+  font-size: 4.2em;
 }
 .mdui-typo h5 {
-  font-size: 1.2em;
+  font-size: 3.6em;
 }
 .mdui-typo h6 {
-  font-size: 1.1em;
+  font-size: 3.3em;
 }
 .mdui-typo code {
   padding: 2px 6px;
@@ -5551,7 +5567,7 @@ body.mdui-locked {
 }
 .mdui-typo u {
   text-decoration: none;
-  border-bottom: 1px solid;
+  border-bottom: 3px solid;
 }
 .mdui-typo del {
   text-decoration: line-through;
@@ -9720,25 +9736,28 @@ select.mdui-select[multiple] option:last-child {
 /* 主标题区域标题 */
 .mdui-card-primary-title {
   display: block;
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 54px;
+  line-height: 60px;
   opacity: .87;
+  font-weight: lighter;
 }
 /* 主标题区域副标题 */
 .mdui-card-primary-subtitle {
   display: block;
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 42px;
+  line-height: 54px;
   opacity: .54;
+  font-weight: lighter;
 }
 /**
  * ============================ 内容区域
  */
 .mdui-card-content {
   position: relative;
-  padding: 16px;
-  font-size: 14px;
-  line-height: 24px;
+  padding: 30px;
+  font-size: 36px;
+  line-height: 42px;
+  font-weight: lighter;
 }
 /**
  * ============================ 卡片菜单
