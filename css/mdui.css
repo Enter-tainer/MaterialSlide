@@ -4677,6 +4677,11 @@ section {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
+p  {
+   font-size: 1.2em;
+   font-weight: lighter;
+   line-height: 1.5em;
+}
 h1 {
   margin: .67em 0;
   font-size: 6em;
