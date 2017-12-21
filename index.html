@@ -98,15 +98,14 @@
                 <button class="mdui-btn mdui-ripple">学有机</button>
             </div>
         </div>
-
     </div>
 </body>
 <script>
     var $$ = mdui.JQ;
-    $$('#qwq').on('click', function () {
+    $$('#lock_btn').on('click', function () {
         $$.lockScreen();
-        setTimeout(function () {
-            $$.unlockScreen();
-        }, 2000);
+    });
+    $$('#unlock_btn').on('click', function () {
+        $$.unlockScreen();
     });
 </script>
