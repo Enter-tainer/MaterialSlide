@@ -114,10 +114,14 @@
     });
     $$('#page_down').on('click', function () {
         now_node += 1;
-        location.hash = 'p' + now_node.toString();
+        var scroll = new SmoothScroll();
+        var anchor = document.querySelector('#p' + now_node.toString());
+        scroll.animateScroll(anchor);
     });
     $$('#page_up').on('click', function () {
         now_node -= 1;
-        location.hash = 'p' + now_node.toString();
+        var scroll = new SmoothScroll();
+        var anchor = document.querySelector('#p' + now_node.toString());
+        scroll.animateScroll(anchor);
     });
 </script>
