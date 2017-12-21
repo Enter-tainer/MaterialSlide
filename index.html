@@ -24,7 +24,7 @@
     </div>
 </header>
 
-<body class="mdui-theme-primary-pink mdui-appbar-with-toolbar mdui-drawer-body-left">
+<body class="mdui-theme-primary-pink mdui-theme-accent-orange mdui-appbar-with-toolbar mdui-drawer-body-left ">
     <!-- 默认抽屉栏在左侧 -->
     <div class="mdui-drawer" id="left-drawer">
         <ul class="mdui-list">
@@ -49,6 +49,27 @@
         </ul>
     </div>
     <div class="mdui-container">
+        <div class="mdui-fab-wrapper" mdui-fab>
+            <button class="mdui-fab mdui-ripple mdui-color-theme-accent">
+                <!-- 默认显示的图标 -->
+                <i class="mdui-icon material-icons">add</i>
+                <i class="mdui-icon mdui-fab-opened material-icons">add</i>
+            </button>
+            <div class="mdui-fab-dial">
+                <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-theme-accent" id="lock_btn">
+                    <i class="mdui-icon material-icons">lock</i>
+                </button>
+                <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-theme-accent" id="unlock_btn">
+                    <i class="mdui-icon material-icons">lock_open</i>
+                </button>
+                <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-theme-accent" id="page_up">
+                    <i class="mdui-icon material-icons">arrow_upward</i>
+                </button>
+                <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-theme-accent" id="page_down">
+                    <i class="mdui-icon material-icons">arrow_downward</i>
+                </button>
+            </div>
+        </div>
         <p>
             还没想好写啥
         </p>
@@ -73,10 +94,11 @@
                 <html>
             </div>
             <div class="mdui-card-actions">
-                <button class="mdui-btn mdui-ripple" id="qwq">烫头</button>
+                <button class="mdui-btn mdui-ripple">烫头</button>
                 <button class="mdui-btn mdui-ripple">学有机</button>
             </div>
         </div>
+
     </div>
 </body>
 <script>
