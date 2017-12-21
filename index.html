@@ -98,14 +98,26 @@
                 <button class="mdui-btn mdui-ripple">学有机</button>
             </div>
         </div>
+        <div id="p1" style="height: 1000px"></div>
+        <div id="p2" style="height: 1000px"></div>
+        <div id="p3" style="height: 1000px"></div>
     </div>
 </body>
 <script>
     var $$ = mdui.JQ;
+    var now_node = new Number(1);
     $$('#lock_btn').on('click', function () {
         $$.lockScreen();
     });
     $$('#unlock_btn').on('click', function () {
         $$.unlockScreen();
+    });
+    $$('#page_down').on('click', function () {
+        now_node += 1;
+        location.hash = 'p' + now_node.toString();
+    });
+    $$('#page_up').on('click', function () {
+        now_node -= 1;
+        location.hash = 'p' + now_node.toString();
     });
 </script>
