@@ -4678,29 +4678,29 @@ section {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 p  {
-   font-size: 2.5em;
+   font-size: 30px;
    font-weight: lighter;
    line-height: 1.5em;
 }
 h1 {
   margin: .67em 0;
-  font-size: 6em;
+  font-size: 60px;
 }
 h2 {
   margin: .67em 0;
-  font-size: 5em;
+  font-size: 54px;
 }
 h3 {
   margin: .67em 0;
-  font-size: 4.5em;
+  font-size: 48px;
 }
 h4 {
   margin: .67em 0;
-  font-size: 3.9em;
+  font-size: 40px;
 }
 h5 {
   margin: .67em 0;
-  font-size: 3em;
+  font-size: 35px;
 }
 /* Grouping content
    ========================================================================== */
