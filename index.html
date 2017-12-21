@@ -117,6 +117,7 @@
     });
     $$('#page_up').on('click', function () {
         now_node -= 1;
+        if (now_node <= 0) now_node = 1;
         var scroll = new SmoothScroll();
         var anchor = document.querySelector('#p' + now_node.toString());
         scroll.animateScroll(anchor);
