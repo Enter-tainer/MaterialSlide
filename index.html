@@ -3,6 +3,7 @@
 <meta charset='utf-8'>
 <meta content='IE=edge' http-equiv='X-UA-Compatible'>
 <link rel="stylesheet" href="./css/mdui.css">
+<link rel="stylesheet" href="./css/jquery.fullpage.css">
 <title>文化传承</title>
 <header>
     <div class="mdui-appbar mdui-appbar-fixed">
@@ -94,6 +95,7 @@
         <div class="mdui-divider" id="p2"></div>
         <div style="height: 200px"></div>
         <div style="height: 15px"></div>
+
         <div class="mdui-hoverable mdui-card">
             <div class="mdui-card-primary">
                 <div class="mdui-card-primary-title">泽培的有机卡片</div>
@@ -124,8 +126,13 @@
     </div>
 </body>
 <script src="./js/mdui.min.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery.fullpage.js"></script>
 <script src="./js/smooth-scroll.js"></script>
 <script>
+    $(document).ready(function () {
+        $('#fullpage').fullpage();
+    });
     var $$ = mdui.JQ;
     var now_node = new Number(1);
     $$('#lock_btn').on('click', function () {
