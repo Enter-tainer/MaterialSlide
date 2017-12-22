@@ -4693,14 +4693,17 @@ h2 {
 h3 {
   margin: .67em 0;
   font-size: 48px;
+  font-weight: lighter;
 }
 h4 {
   margin: .67em 0;
   font-size: 40px;
+  font-weight: lighter;
 }
 h5 {
   margin: .67em 0;
   font-size: 35px;
+  font-weight: lighter;
 }
 /* Grouping content
    ========================================================================== */
@@ -4740,7 +4743,7 @@ hr {
 pre {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: 3em;
+  font-size: 30px;
   /* 2 */
 }
 /* Text-level semantics
