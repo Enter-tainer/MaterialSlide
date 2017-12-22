@@ -44,7 +44,7 @@
             </a>
         </ul>
     </div>
-    <div class="mdui-container" id="p1">
+    <div class="mdui-container">
         <div class="mdui-fab-wrapper" mdui-fab>
             <button class="mdui-fab mdui-ripple mdui-color-theme-accent">
                 <!-- 默认显示的图标 -->
@@ -66,10 +66,11 @@
                 </button>
             </div>
         </div>
-        <div style="height: 15px"></div>
+        <div id="p1"></div>
+        <div style="height: 90px"></div>
         <div class="mdui-card mdui-shadow-5 mdui-hoverable">
             <!-- 卡片的媒体内容，可以包含图片、视频等媒体内容，以及标题、副标题 -->
-            <div class="mdui-card-media">
+            <div class="mdui-card-media mdui-ripple">
                 <img src="images/wallpaper.png" />
                 <!-- 卡片中可以包含一个或多个菜单按钮 -->
                 <div class="mdui-card-menu">
@@ -84,17 +85,27 @@
             </div>
             <!-- 卡片的按钮 -->
             <div class="mdui-card-actions">
-                <button class="mdui-btn mdui-ripple">START</button>
-                <button class="mdui-btn mdui-ripple">STOP AND LET ME DO MY HOMEWORK</button>
-                <button class="mdui-btn mdui-btn-icon mdui-float-right">
+                <button class="mdui-btn mdui-ripple" id="start_btn">START</button>
+                <button class="mdui-btn mdui-ripple" mdui-dialog="{target: '#refuse_dialog'}">STOP AND LET ME DO MY HOMEWORK</button>
+                <button class="mdui-btn mdui-btn-icon mdui-float-right" id="more_btn">
                     <i class="mdui-icon material-icons">expand_more</i>
                 </button>
             </div>
+            <div class="mdui-dialog" id="refuse_dialog">
+                <div class="mdui-dialog-title">没有这种操作</div>
+                <div class="mdui-dialog-content">谢谢</div>
+                <div class="mdui-dialog-actions">
+                    <button class="mdui-btn mdui-ripple">OK</button>
+                    <button class="mdui-btn mdui-ripple">All right</button>
+                </div>
+            </div>
         </div>
-        <div style="height: 200px"></div>
-        <div class="mdui-divider" id="p2"></div>
-        <div style="height: 200px"></div>
-        <div style="height: 15px"></div>
+        <div style="height: 36px"></div>
+        <div class="mdui-progress">
+            <div class="mdui-progress-indeterminate"></div>
+        </div>
+        <div style="height: 1000px"></div>
+        <div style="height: 94px" id="p2"></div>
 
         <div class="mdui-hoverable mdui-card">
             <div class="mdui-card-primary">
@@ -109,20 +120,35 @@
                     你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培
 
                 </p>
-                <p>
-                    还没想好写啥
-                </p>
-                <p>
-                    还没想好写啥
-                </p>
-                <!doctype html>
-                <html>
             </div>
             <div class="mdui-card-actions">
                 <button class="mdui-btn mdui-ripple">烫头</button>
                 <button class="mdui-btn mdui-ripple">学有机</button>
             </div>
         </div>
+        <div style="height: 1000px"></div>
+        <div style="height: 94px" id="p3"></div>
+
+        <div class="mdui-hoverable mdui-card">
+            <div class="mdui-card-primary">
+                <div class="mdui-card-primary-title">泽培的有机卡片</div>
+                <div class="mdui-card-primary-subtitle">qwq</div>
+            </div>
+            <div class="mdui-card-content">
+                你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培
+                <p>
+                    还没想好写啥你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培
+                    你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培
+                    你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培 你好我是泽培你好我是泽培你好我是泽培
+
+                </p>
+            </div>
+            <div class="mdui-card-actions">
+                <button class="mdui-btn mdui-ripple">烫头</button>
+                <button class="mdui-btn mdui-ripple">学有机</button>
+            </div>
+        </div>
+    </div>
     </div>
 </body>
 <script src="./js/mdui.min.js"></script>
@@ -153,5 +179,11 @@
         var scroll = new SmoothScroll();
         var anchor = document.querySelector('#p' + now_node.toString());
         scroll.animateScroll(anchor);
+    });
+    $$('#start_btn').on('click', function () {
+        $$('#page_down').trigger('click');
+    });
+    $$('#more_btn').on('click', function () {
+        $$('#page_down').trigger('click');
     });
 </script>
