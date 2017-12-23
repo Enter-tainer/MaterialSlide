@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang='zh-CN'>
 <meta charset='utf-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
 <meta content='IE=edge' http-equiv='X-UA-Compatible'>
 <link rel="stylesheet" href="./css/mdui.css">
 <link rel="stylesheet" href="./css/jquery.fullpage.css">
@@ -103,156 +107,6 @@
         <div style="height: 1000px"></div>
         <div style="height: 94px" id="p2"></div>
 
-        <div class="mdui-hoverable mdui-card mdui-shadow-5">
-            <div class="mdui-card-primary">
-                <div class="mdui-card-primary-title">[SCOI 2005] 骑士精神</div>
-                <div class="mdui-card-primary-subtitle">qwq</div>
-            </div>
-            <div class="mdui-card-content">
-                <body>
-                    <h1>题意</h1>
-                    <blockquote>
-                        <p>题目地址：
-                            <a href='https://ruanx.pw/bzojch/p/1085.html'>BZOJCH</a>
-                            <a href='https://daniu.luogu.org/problem/show?pid=2324'>luogu</a>
-                        </p>
-                    </blockquote>
-                    <p>要将棋盘上的马归位，求最小步数</p>
-                    <p>
-                        <!--more-->
-                    </p>
-                    <h1>题解</h1>
-                    <p>那就。。搜呗</p>
-                    <p>首先注意到大力BFS会爆，大力DFS也会爆</p>
-                    <p>然后再注意到题目中的条件限制：
-                        <strong>最多不超过15步</strong>
-                    </p>
-                    <p>这已经很明显了，来写
-                        <strong>IDA*</strong>吧</p>
-                    <p>那。。什么是IDA*呢？</p>
-                    <p>迭代加深搜索。</p>
-                    <p>好像。。很迷。。。</p>
-                    <p>其实就是从小到大枚举走几步可以到终点，然后开始xjb搜，如果超过限制就return，直到搜到终点。</p>
-                    <p>那么对于这个题，我们就枚举一下跳几步可以到达终点，从小到大来，每次dfs一下。</p>
-                    <p>那么。。为什么要这样搞呢？</p>
-                    <p>我们想要求最少的移动次数，如果单纯dfs是无法做到的，只能迭代加深。</p>
-                    <p>这还没有完，只是IDA*的一部分，还有一顿操作在等着你。</p>
-                    <h2>估价函数</h2>
-                    <p>什么是估价函数呢？</p>
-                    <p>对于当前的一个状态，给它一个评估。</p>
-                    <p>那。。这有什么用呢？</p>
-                    <p>我们到达每一个状态时，判断一下它已经跳的步数，再加上它的估价函数值，如果大于了限制，就大力return。</p>
-                    <p>听上去好像很棒的样子，不过估价函数是不能xjb选的。</p>
-                    <p>估价函数需要满足以下要求：可以估小，不可以估大</p>
-                    <p>这是很显然的。</p>
-                    <p>对于这个题目，我们可以以“不在自己位置上的马的个数”为估价函数，正确性可以自己脑补（跳一次最多复位一个马）。</p>
-                    <p>当然如果要更优，可以以：“不在自己位置上的马跳回自己位置的步数和”为估价函数，据说更快。</p>
-                    <p>注意到一次跳一个棋子，两个状态的估价函数是可以互相递推的，只需要看跳了之后的变化，如果大力每次计算，会T成70分</p>
-                    <p>然后记得要维护一下，如果某一个地方已经搜到解了，就不必再搜下去了。</p>
-                    <h1>代码</h1>
-                    <pre>
-//
-// Created by Margatroid on 2017/10/12.
-//
-
-#include &lt;bits/stdc++.h&gt;
-using namespace std;
-typedef array&lt;array&lt;int, 5&gt;, 5&gt; board;
-const board final_status = {1, 1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 0, 1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, -1};
-const int dx[] = {-2, -1, 1, 2, 2, 1, -1, -2},
-        dy[] = {1, 2, 2, 1, -1, -2, -2, -1};
-inline int val(const board &amp;status)
-{
-    int ans = 0;
-    for (int i = 0; i &lt; 5; ++i)
-        for (int j = 0; j &lt; 5; ++j)
-            if (status[i][j] != final_status[i][j])
-                ++ans;
-    return ans;
-}
-int sum = 0;
-bool dfs(const board &amp;now, int cost_limit, int step, int now_val)
-{
-    if (now == final_status) return sum = step, true;
-    if (step + now_val &gt; cost_limit + 1) return false;
-    board d = now;
-    int x, y;
-    for (int i = 0; i &lt; 5; ++i)
-        for (int j = 0; j &lt; 5; ++j)
-            if (d[i][j] == 0)
-            {
-                x = i, y = j;
-                goto label;
-            }
-label:
-    bool status = 0;
-    for (int i = 0; i &lt; 8; ++i)
-    {
-        if (x + dx[i] &gt;= 5 || x + dx[i] &lt; 0 || y + dy[i] &gt;= 5 || y + dy[i] &lt; 0) continue;
-        int nx = dx[i] + x, ny = dy[i] + y, new_val = now_val;
-        swap(d[x][y], d[nx][ny]);
-        if (d[x][y] == final_status[x][y] &amp;&amp; d[nx][ny] != final_status[x][y]) --new_val;
-        else if (d[x][y] != final_status[x][y], d[nx][ny] == final_status[x][y]) ++new_val;
-        if (d[nx][ny] == final_status[nx][ny] &amp;&amp; d[x][y] != final_status[nx][ny]) --new_val;
-        else if (d[nx][ny] != final_status[nx][ny] &amp;&amp; d[x][y] == final_status[nx][ny])++new_val;
-        status |= dfs(d, cost_limit, step + 1, new_val);
-        swap(d[x][y], d[nx][ny]);
-        if (status) return status;
-    }
-    return status;
-}
-int ida_star(const board &amp;start_status)
-{
-    int ans = 1, st;
-    sum = 0;
-    for (; !(st = dfs(start_status, ans, 0, val(start_status))) &amp;&amp; ans &lt;= 15; ++ans);
-    if (st == 1 &amp;&amp; ans &lt;= 15)
-        return sum;
-    else
-        return -1;
-}
-int main()
-{
-    int t;
-    cin &gt;&gt; t;
-    while (t--)
-    {
-        board now;
-        for (int i = 0; i &lt; 5; ++i)
-        {
-            string s;
-            cin &gt;&gt; s;
-            for (int j = 0; j &lt; 5; ++j)
-            {
-                char t = s[j];
-                if (t == &#39;0&#39;)
-                    now[i][j] = -1;
-                else if (t == &#39;1&#39;)
-                    now[i][j] = 1;
-                else if (t == &#39;*&#39;)
-                    now[i][j] = 0;
-            }
-        }
-        if (now == final_status)
-        {
-            cout &lt;&lt; 0 &lt;&lt; &#39;\n&#39;;
-            continue;
-        }
-        cout &lt;&lt; ida_star(now) &lt;&lt; &#39;\n&#39;;
-    }
-}
-                </pre>
-                    <p>我是菜，真的，这玩意写了一下午+一晚上。。。菜的扣jue qwq</p>
-                    <p></p>
-                </body>
-
-                </html>
-            </div>
-            <div class="mdui-card-actions">
-                <button class="mdui-btn mdui-ripple">烫头</button>
-                <button class="mdui-btn mdui-ripple">学有机</button>
-            </div>
-        </div>
         <div style="height: 1000px"></div>
         <div style="height: 94px" id="p3"></div>
 
@@ -275,7 +129,6 @@ int main()
                 <button class="mdui-btn mdui-ripple">学有机</button>
             </div>
         </div>
-    </div>
     </div>
 </body>
 <script src="./js/mdui.min.js"></script>
