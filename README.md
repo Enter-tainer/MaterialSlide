@@ -40,3 +40,5 @@
 ## 使用本项目的案例
 
 目前只有我和我的同学qwq
+
+同学的[Demo](http://xzcxzc_yy.gitee.io/groupwork/news/index.html)
