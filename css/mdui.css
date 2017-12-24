@@ -5535,22 +5535,7 @@ body.mdui-locked {
   color: rgba(0, 0, 0, .54);
 }
 .mdui-typo h1 {
-  font-size: 6em;
-}
-.mdui-typo h2 {
-  font-size: 5.4em;
-}
-.mdui-typo h3 {
-  font-size: 4.8em;
-}
-.mdui-typo h4 {
-  font-size: 4.2em;
-}
-.mdui-typo h5 {
-  font-size: 3.6em;
-}
-.mdui-typo h6 {
-  font-size: 3.3em;
+  font-size: 2em;
 }
 .mdui-typo code {
   padding: 2px 6px;
@@ -9749,15 +9734,15 @@ select.mdui-select[multiple] option:last-child {
   font-size: 54px;
   line-height: 60px;
   opacity: .87;
-  font-weight: lighter;
+  font-weight: 300;
 }
 /* 主标题区域副标题 */
 .mdui-card-primary-subtitle {
   display: block;
-  font-size: 42px;
+  font-size: 36px;
   line-height: 50px;
   opacity: .54;
-  font-weight: lighter;
+  font-weight: normal;
 }
 /**
  * ============================ 内容区域
@@ -9767,7 +9752,7 @@ select.mdui-select[multiple] option:last-child {
   padding: 20px;
   font-size: 18px;
   line-height: 54px;
-  font-weight: lighter;
+  font-weight: 300;
 }
 /**
  * ============================ 卡片菜单
