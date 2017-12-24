@@ -6,7 +6,9 @@
 <meta name="renderer" content="webkit">
 <meta http-equiv="Cache-Control" content="no-siteapp"/>
 <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-<link rel="stylesheet" href="../css/mdui.css">
+<link rel="stylesheet" href="../node_modules/mdui/dist/css/mdui.min.css">
+<link rel="stylesheet" href="../css/modifyed.css">
+<link rel="stylesheet" href="../node_modules/node-waves/dist/waves.min.css">
 <title>文化传承</title>
 <header>
     <div class="mdui-appbar mdui-appbar-fixed">
@@ -104,9 +106,12 @@
         </div>
     </div>
 </body>
-<script src="../js/mdui.min.js"></script>
-<script src="../js/smooth-scroll.js"></script>
+<script src="../node_modules/mdui/dist/js/mdui.min.js"></script>
+<script src="../node_modules/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="../node_modules/node-waves/dist/waves.min.js"></script>
 <script>
+    Waves.attach('.qwq-ripple');
+    Waves.init();
     var $$ = mdui.JQ;
     var now_node = new Number(1);
     $$('#lock_btn').on('click', function () {
@@ -127,5 +132,11 @@
         var scroll = new SmoothScroll();
         var anchor = document.querySelector('#p' + now_node.toString());
         scroll.animateScroll(anchor);
+    });
+    $$('#start_btn').on('click', function () {
+        $$('#page_down').trigger('click');
+    });
+    $$('#more_btn').on('click', function () {
+        $$('#page_down').trigger('click');
     });
 </script>
