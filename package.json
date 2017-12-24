@@ -1,0 +1,21 @@
+{
+  "name": "groupwork",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {
+    "mdui": "^0.4.0",
+    "smooth-scroll": "^12.1.5",
+    "node-waves": "^0.7.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/margatroid/GroupWork.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
