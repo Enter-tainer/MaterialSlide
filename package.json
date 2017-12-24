@@ -1,7 +1,7 @@
 {
   "name": "groupwork",
   "version": "1.0.0",
-  "description": "",
+  "description": "A material design slide. Easy to use",
   "main": "index.html",
   "dependencies": {
     "mdui": "^0.4.0",
@@ -14,8 +14,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/margatroid/GroupWork.git"
+    "url": "https://github.com/Enter-tainer/MaterialSlide"
   },
   "author": "",
-  "license": "ISC"
+  "license": "MIT"
 }
