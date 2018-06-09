@@ -5,7 +5,7 @@
   "main": "index.html",
   "dependencies": {
     "mdui": "^0.4.0",
-    "smooth-scroll": "^12.1.5",
+    "smooth-scroll": "^14.2.0",
     "node-waves": "^0.7.5"
   },
   "devDependencies": {},
