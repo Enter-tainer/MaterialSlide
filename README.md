@@ -1,5 +1,7 @@
 # Material Silde
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Enter-tainer/MaterialSlide.svg)](https://greenkeeper.io/)
+
 这里是一个使用`mdui`制作Material Design的幻灯片的项目
 
 这里是[Demo](https://enter-tainer.github.io/MaterialSlide/)
